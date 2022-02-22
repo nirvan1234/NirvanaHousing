@@ -1,17 +1,25 @@
 import {ADD_TO_CART} from '../constants'
+import { GET_USERS } from '../constants'
 
 const initialState = {
-    cardData:[]
+    cardData:[],
+    users:[],
+    // loading:true,
 }
 export default function cardItems(state=[],action){
     switch(action.type){
        case ADD_TO_CART:
-        //console.log('reducer', action)
-           return [
+           return {
             ...state,
-            {cardData:action.data}
-           ]
-             
+            data:action.data
+           }
+            
+           
+        // case GET_USERS:
+        //     return {
+        //         ...state,
+        //         id : action.id
+        //     }
            
         default:
             return state

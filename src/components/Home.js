@@ -1,34 +1,24 @@
 import React from 'react'
+import "./Home.css";
 
-function Home(props) {
-    console.warn(props);
+function Home() {
+  
     return (
-        <div>
-            <h1>Home Component</h1>
-            <div className="add-to-cart">
-    <span className="cart-count">{props.data.length}</span>
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/000/496/007/small/Ecommerce_998.jpg" alt="cart img" />
-            </div>
-            <div className="cart-wrapper">
-                <div className="img-wrapper item">
-                    <img src="https://cdn.imgbin.com/0/19/6/mobile-app-icon-virtual-reality-icon-T6zUx7ck.jpg" alt="mobile img"/>
-                </div>
-                <div className="text-wrapper item">
-                    <span>
-                        I-Phone
-                    </span>
-                    <span>
-                        Price: $1000.00
-                    </span>
-                </div>
-                <div className="btn-wrapper item">
-                    <button onClick={()=>
-                        props.addToCartHandler({price:1000,name:'i phone 11'})
-                    }>
-                        Add To Cart</button>
-                </div>
-            </div>
-        </div>
+        <div className = "continer main_header">
+        <div className = "row">
+     <div className = "col-md-6 col-6 main_header_left">
+         <h2> Looking for a Property!</h2>
+         <h1> Buy and Sell Properties at Right Price</h1>
+         <a href="/lux/building"> <button> Details</button></a>
+         </div>
+      
+     <div className = "col-md-6 col-6 main_header_right">
+         <figure>
+              <img src= "https://i.pinimg.com/736x/d3/59/1c/d3591c63b81ba14696e290f74743e1de--animated-gifs-rani.jpg"  alt="thapa" className="img-fluid" title = "thapa-technical" />
+         </figure>
+     </div>
+ </div>
+ </div>
     )
 }
 export default Home
