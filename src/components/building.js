@@ -27,6 +27,7 @@ function Building(props) {
         getAllApartment();
         getSearchTerm();
         getSearchCost();
+        getSearchFloor();
         // dispatch(loadUsers());
       },[]);
 
@@ -158,7 +159,6 @@ const getSearchCost = (e)=> {
 
    {apartment.map((students, i) => {
      return (
-
 
        <tr>
            <td class="geeks">{students.aptNo}</td>
