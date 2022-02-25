@@ -25,15 +25,14 @@ function Building(props) {
 
     useEffect(() => {
         getAllApartment();
-        flatEach();
-        // getSearchTerm();
+        getSearchTerm();
+        getSearchCost();
         // dispatch(loadUsers());
       },[]);
 
     async function getAllApartment() {
         try {
           const apartments = await axios.get("http://localhost:3005/posts");
-          console.log("apratment data",apartment)
           setApartment(apartments.data);
           setsecondTimeData(apartments.data)
         } catch (error) {
@@ -42,9 +41,8 @@ function Building(props) {
       }
 
    const getSearchTerm = (e)=> {
-      console.log(e);
       const search = e
-      // console.log("serch",search);
+      console.log("serch",search);
      const filteredNames = secondTimeData.filter( (item) => item.bedroom.includes(search))
     // console.log("filterredNames",filteredNames)
      setApartment(filteredNames);
@@ -53,45 +51,52 @@ function Building(props) {
 
 
    const getSearchFloor = (e)=> {
-    console.log(e);
     const search = e
-    console.log("serch",search);
+    console.log("second", search)
    const filteredNames = secondTimeData.filter( (item) => item.floor.includes(search))
-  console.log("filterredNames",filteredNames)
    setApartment(filteredNames);
  }
 
  const getSearchArea = (e)=> {
-  console.log(e);
   const search = e
-  console.log("serch",search);
- const filteredNames = secondTimeData.filter( (item) => item.grossm2.includes(search))
-console.log("filterredNames",filteredNames)
- setApartment(filteredNames);
+  console.log("third", search)
+//  const filteredNames = secondTimeData.filter( (item) => item.grossm2.includes(search))
+ const filteredNamestwo = secondTimeData.filter( function (item) {
+   return ( item.grossm2 >= (search -100) && item.grossm2 <= search);
+ })
+ console.log("thirdhaina", filteredNamestwo)
+ //setApartment(filteredNames);
+ setApartment(filteredNamestwo);
 }
 
 const getSearchCost = (e)=> {
-  console.log(e);
-  const search = e
-  console.log("serch",search);
+  const sea = e
   // const filteredNamesNew = secondTimeData.filter( (item) => item.grossm2)
   // const rounded = Math.round(filteredNamesNew);
-  // console.log("sh",rounded);
+  console.log("sh", sea);
+  const filteredNamesthree = secondTimeData.filter( function (item) {
+    return ( item.price >= (sea -10000000) && item.price <= sea);
+  })
   
- const filteredNames = secondTimeData.filter( (item) => Math.floor(item.grossm2).includes(search))
-console.log("filterredNames",filteredNames)
- setApartment(filteredNames);
+ setApartment(filteredNamesthree);
 }
 
-const flatEach = async (id) => {
-  await axios.get(`http://localhost:3005/posts/${id}`);
-  var newstudent = apartment.filter((item) => {
-    return item.uniqueID == id;
-  });
-  setStudent(newstudent);
-   setModalOpen(false)
+// const flatEach = async (id) => {
+//   await axios.get(`http://localhost:3005/posts/${id}`);
+//   var newstudent = apartment.filter((item) => {
+//     return item.uniqueID == id;
+//   });
+//   setStudent(newstudent);
+//    setModalOpen(false)
   
-};
+// };
+// const flatEach =(e)=> {
+//   const search = e
+//   console.log("olaa",e);
+//   const filteredFlats = secondTimeData.filter((item)=> item.aptNo.includes(search))
+//   setStudent(filteredFlats);
+//   console.log("flats", filteredFlats)
+// }
   return (
     <div>
 
@@ -132,19 +137,19 @@ const flatEach = async (id) => {
            <select onChange={(e) => getSearchArea(e.target.value)}>
                 <option value="">All</option>
                 <option value="100">0-100</option>
-                <option value="0">100-200</option>
-                <option value="200">200-300</option>
-                <option value="300">300-400</option>
+                <option value="200">100-200</option>
+                <option value="300">200-300</option>
+                <option value="400">300-400</option>
             </select>
            </th>
            <th>Prices
            <select onChange={(e) => getSearchCost(e.target.value)}>
                 <option value="">All</option>
-                <option value="0-10000000">0-10000000</option>
-                <option value="10000001-20000000">10000001-20000000</option>
-                <option value="20000001-30000000">20000001-30000000</option>
-                <option value="30000001-40000000">30000001-40000000</option>
-                <option value="40000001-50000000">40000001-50000000</option>
+                <option value="10000000">0-10000000</option>
+                <option value="20000000">10000001-20000000</option>
+                <option value="30000000">20000001-30000000</option>
+                <option value="40000000">30000001-40000000</option>
+                <option value="50000000">40000001-50000000</option>
             </select> </th>
            <th>   </th>
        </tr>
@@ -161,7 +166,7 @@ const flatEach = async (id) => {
            <td>{students.floor}</td>
            <td>{students.grossm2}</td>
            <td>{students.price}</td>
-           <td><button onClick={()=> setIsOpen(true)} > Details</button>
+           <td><button onClick={()=> setIsOpen(true)}> Details</button>
            
            </td>
        </tr>
