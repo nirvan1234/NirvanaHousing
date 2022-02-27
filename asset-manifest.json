@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/NirvanaHousing/static/css/main.b3c1ab57.chunk.css",
+    "main.js": "/NirvanaHousing/static/js/main.3130c8a7.chunk.js",
+    "main.js.map": "/NirvanaHousing/static/js/main.3130c8a7.chunk.js.map",
+    "runtime-main.js": "/NirvanaHousing/static/js/runtime-main.307be682.js",
+    "runtime-main.js.map": "/NirvanaHousing/static/js/runtime-main.307be682.js.map",
+    "static/js/2.a3e62fd2.chunk.js": "/NirvanaHousing/static/js/2.a3e62fd2.chunk.js",
+    "static/js/2.a3e62fd2.chunk.js.map": "/NirvanaHousing/static/js/2.a3e62fd2.chunk.js.map",
+    "static/js/3.dd1dd7d8.chunk.js": "/NirvanaHousing/static/js/3.dd1dd7d8.chunk.js",
+    "static/js/3.dd1dd7d8.chunk.js.map": "/NirvanaHousing/static/js/3.dd1dd7d8.chunk.js.map",
+    "index.html": "/NirvanaHousing/index.html",
+    "static/css/main.b3c1ab57.chunk.css.map": "/NirvanaHousing/static/css/main.b3c1ab57.chunk.css.map",
+    "static/js/2.a3e62fd2.chunk.js.LICENSE.txt": "/NirvanaHousing/static/js/2.a3e62fd2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.307be682.js",
+    "static/js/2.a3e62fd2.chunk.js",
+    "static/css/main.b3c1ab57.chunk.css",
+    "static/js/main.3130c8a7.chunk.js"
+  ]
+}
