@@ -18,7 +18,7 @@ function Building(props) {
     // let dispatch = useDispatch();
     // const {users} = useSelector(state => state.users )
 
-    // console.log("users", props.data)
+    console.log("users", bed)
   
 
      //console.log(bed);
@@ -81,6 +81,11 @@ const getSearchCost = (e)=> {
   
  setApartment(filteredNamesthree);
 }
+const showDetails = (e) => {
+  setBed(e);
+  setIsOpen(true);
+
+}
 
 // const flatEach = async (id) => {
 //   await axios.get(`http://localhost:3005/posts/${id}`);
@@ -102,8 +107,16 @@ const getSearchCost = (e)=> {
     <div>
 
 <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-
-     
+<div style={{ padding:'18px',margin:'8px'}}>
+    <div style={{display:"flex"}}><h5>Apartment No:</h5>&nbsp;&nbsp;&nbsp;&nbsp;<p>{bed.aptNo}</p></div>
+    <div style={{display:"flex"}}><h5>Bedrooms</h5>&nbsp;&nbsp;&nbsp;&nbsp;<p>{bed.bedroom}</p></div>
+    <div style={{display:"flex"}}><h5>Floor</h5>&nbsp;&nbsp;&nbsp;&nbsp;<p>{bed.floor}</p></div>
+    <div style={{display:"flex"}}><h5>Area</h5>&nbsp;&nbsp;&nbsp;&nbsp;<p>{bed.grossm2}mSquare</p></div>
+    <div style={{display:"flex"}}><h5>Block No:</h5> &nbsp;&nbsp;&nbsp;&nbsp;<p>{bed.blockNew}</p></div>
+    <div style={{display:"flex"}}><h5>Bedrooms</h5> &nbsp;&nbsp;&nbsp;&nbsp;<p>{bed.bedroom}</p></div>
+    <div style={{display:"flex"}}><h5>Price</h5>  &nbsp;&nbsp;&nbsp;&nbsp;<p>{bed.price}</p></div>
+    <div style={{display:"flex"}}><h5>Availability</h5>  &nbsp;&nbsp;&nbsp;&nbsp;<p>{bed.availability}</p></div>
+</div>
                <div className="labuttonew">
     <button type="button" className="labfour" className="btn btn-outline-success float-right"
      style={{ backgroundColor: "green", color: "white" ,padding:'8px', width:'100px',marginRight:'8px'}}
@@ -166,7 +179,10 @@ const getSearchCost = (e)=> {
            <td>{students.floor}</td>
            <td>{students.grossm2}</td>
            <td>{students.price}</td>
-           <td><button onClick={()=> setIsOpen(true)}> Details</button>
+           {/* <td><button onClick={()=> setIsOpen(true)}> Details</button>
+           
+           </td> */}
+           <td><button onClick={(e) => showDetails(students)}> Details</button>
            
            </td>
        </tr>

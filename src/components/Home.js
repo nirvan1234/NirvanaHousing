@@ -9,7 +9,7 @@ function Home() {
      <div className = "col-md-6 col-6 main_header_left">
          <h2> Looking for a Property!</h2>
          <h1> Buy and Sell Properties at Right Price</h1>
-         <a href="/lux/building"> <button> Details</button></a>
+         <a href="/building"> <button> Details</button></a>
          </div>
       
      <div className = "col-md-6 col-6 main_header_right">
